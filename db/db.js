@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
 require('dotenv').config()
-let DATABASE_URL = process.env.DATABASE_URL
 
-module.exports = new Sequelize(DATABASE_URL, {
+
+module.exports = new Sequelize(process.env.DATABASE_URL || process.env.MYDBURL, {
   dialect: 'postgres',
   logging: false,
 });
