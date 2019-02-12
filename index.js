@@ -3,8 +3,9 @@ const server = require('./api');
 
 db.initDb()
   .then(() => {
-    server.listen(3000, ()=>{
-      console.log('Server is listening')
+    let myPort = process.env.PORT || 3000;
+    server.listen(myPort, ()=>{
+      console.log(`App running on port: ${myPort}`)
     });
   })
   .catch((e) => {
