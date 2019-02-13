@@ -1,8 +1,6 @@
 const Sequelize = require('sequelize');
-require('dotenv').config()
 
-
-module.exports = new Sequelize(process.env.DATABASE_URL || process.env.MYDBURL, {
+module.exports = new Sequelize(process.env.DATABASE_URL || 'postgres://localhost/acmewebseq', {
   dialect: 'postgres',
   logging: false,
 });
